@@ -16,6 +16,8 @@ impl Speech {
             .set_client_name(ClientName::new(user, application))?
             .check_client_name_set()?;
 
+        client.set_rate(ClientScope::Current, 10)?.receive()?;
+
         Ok(Speech { client })
     }
 
