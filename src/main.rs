@@ -16,7 +16,7 @@ fn main() -> anyhow::Result<()> {
 
     speech_client.set_voice("Mikhail")?;
 
-    if news.len() == 0 {
+    if news.is_empty() {
         speech_client.speak(&["К сожалению, новостей сегодня нет.".into()])?;
     } else {
         speech_client.speak(&news)?;
